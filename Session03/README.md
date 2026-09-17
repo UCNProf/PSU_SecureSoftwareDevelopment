@@ -6,7 +6,7 @@ Identificer sårbarheder og usikre kodningspraksisser i de givne kodeeksempler.
 
 ## Materialer
 
-Mappen `snippets/` indeholder seks selvstændige eksempler:
+Mappen `snippets/` indeholder otte selvstændige eksempler:
 
 - `snippets/csharp/01-user-search.cs` - SQL-injektion
 - `snippets/csharp/02-download.cs` - path traversal
@@ -14,12 +14,14 @@ Mappen `snippets/` indeholder seks selvstændige eksempler:
 - `snippets/php/02-comment.php` - stored XSS
 - `snippets/javascript/01-profile.js` - DOM-baseret XSS
 - `snippets/javascript/02-calculator.js` - usikker dynamisk kodekørsel
+- `snippets/c/01-copy-name.c` - buffer overflow
+- `snippets/c/02-log-message.c` - format string-sårbarhed
 
 Koden er med vilje sårbar og skal ikke bruges i produktion eller eksponeres på et offentligt system.
 
 ## Procedure
 
-1. Gennemgå hvert snippet uden først at se `facilitator-notes.md`.
+1. Gennemgå hvert snippet selvstændigt.
 2. Markér input, der kommer fra en bruger eller en ekstern kilde.
 3. Find de linjer, hvor input bruges i databaseforespørgsler, filstier, HTML eller kode.
 4. Beskriv sårbarheden og dens konsekvens.
