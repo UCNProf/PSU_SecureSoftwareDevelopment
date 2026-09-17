@@ -2,7 +2,16 @@
 // Student exercise: trace the comment from input to the response.
 $comment = $_POST['comment'] ?? '';
 
-$connection = new PDO('mysql:host=localhost;dbname=course', 'course_app', 'development-password');
+$connection = new PDO('sqlite:' . __DIR__ . '/course.db');
+$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$connection->exec(<<<'SQL'
+CREATE TABLE IF NOT EXISTS comments (
+    id INTEGER PRIMARY KEY,
+    body TEXT NOT NULL
+);
+SQL);
+
 $statement = $connection->prepare('INSERT INTO comments (body) VALUES (:body)');
 $statement->execute(['body' => $comment]);
 
